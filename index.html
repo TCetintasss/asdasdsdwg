@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel-Perfect Tech Pack Sketch Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel controls" aria-labelledby="controls-title">
+        <h1 id="controls-title">Tech Pack Sketch Generator</h1>
+        <p class="rule-callout">The Jasmine master template is built in as the default locked background, including the logo. Upload normal garment photos; the app converts them to flat-sketch style artwork and places only the generated sketch inside the fixed boxes.</p>
+
+        <details class="advanced">
+          <summary>Optional: replace master template image</summary>
+          <label class="field compact">
+            <span>Master template override</span>
+            <input id="templateInput" type="file" accept="image/*" />
+          </label>
+        </details>
+
+        <h2>1. Source photos → generated sketches</h2>
+        <div class="grid-fields">
+          <label class="field"><span>Front garment photo</span><input data-source-slot="front" type="file" accept="image/*" /></label>
+          <label class="field"><span>Back garment photo</span><input data-source-slot="back" type="file" accept="image/*" /></label>
+          <label class="field"><span>Collar photo</span><input data-source-slot="collar" type="file" accept="image/*" /></label>
+          <label class="field"><span>Chest pocket photo</span><input data-source-slot="chestPocket" type="file" accept="image/*" /></label>
+          <label class="field"><span>Lower pocket photo</span><input data-source-slot="lowerPocket" type="file" accept="image/*" /></label>
+          <label class="field"><span>Front closure photo</span><input data-source-slot="frontClosure" type="file" accept="image/*" /></label>
+          <label class="field"><span>Sleeve photo</span><input data-source-slot="sleeve" type="file" accept="image/*" /></label>
+          <label class="field"><span>Side vent photo</span><input data-source-slot="sideVent" type="file" accept="image/*" /></label>
+          <label class="field"><span>Inside view photo</span><input data-source-slot="insideView" type="file" accept="image/*" /></label>
+        </div>
+
+        <h2>2. Swatch and Excel data</h2>
+        <div class="grid-fields">
+          <label class="field"><span>Fabric swatch</span><input data-asset-slot="fabric" type="file" accept="image/*" /></label>
+        </div>
+
+        <label class="field">
+          <span>Size chart from Excel</span>
+          <textarea id="sizeChartInput" rows="7" placeholder="Paste copied Excel cells here. Tabs, commas, semicolons, or | are supported."></textarea>
+        </label>
+
+        <label class="field">
+          <span>Construction notes</span>
+          <textarea id="notesInput" rows="5" placeholder="Use one note per line"></textarea>
+        </label>
+
+        <div class="actions">
+          <button id="downloadButton" type="button">Download PNG</button>
+          <button id="clearButton" type="button">Clear inserted content</button>
+        </div>
+      </section>
+
+      <section class="panel preview" aria-labelledby="preview-title">
+        <h2 id="preview-title">Locked Template Preview</h2>
+        <canvas id="techPackCanvas" width="1536" height="1016" aria-label="Tech pack template preview"></canvas>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

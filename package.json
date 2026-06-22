@@ -1,0 +1,9 @@
+{
+  "name": "pixel-perfect-tech-pack-sketch-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local browser app for generating flat-sketch tech packs on a locked Jasmine template.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
